@@ -21,7 +21,9 @@ for k,v in d.items():
     print(k,":",v) 
 
 from collections import Iterable
+from collections import Iterator
 
+# isinstance 是否是可迭代的Interable
 print(isinstance(d, Iterable))
 
 #Python内置的enumerate函数可以把一个list变成索引-元素对
@@ -69,7 +71,9 @@ def fib(max):
 # 可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。
 # 可以使用isinstance()判断一个对象是否是Iterator对象
 
-isinstance((x for x in range(1,11)), Iterator)
+t = (1,)
+t = (x*x for x in range(1,11))
+print(isinstance(t, Iterator))
 
 #把list、dict、str等Iterable变成Iterator可以使用iter()函数：
 isinstance(iter([]),Iterator)
